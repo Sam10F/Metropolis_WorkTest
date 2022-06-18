@@ -37,15 +37,16 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/styles/variables";
 .collapsibleTitle {
     position: relative;
     padding-right: 30px;
-    color: #00a0d2;
+    color: $custom-blue;
 }
 
 .collapsibleTitle::after {
     content: "";
-    border: solid #00a0d2;
+    border: solid $custom-blue;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;

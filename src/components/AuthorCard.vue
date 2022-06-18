@@ -43,6 +43,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/styles/variables";
 .authorArticle {
     background-color: white;
     padding: 20px;
@@ -89,7 +90,7 @@ export default defineComponent({
     }
 
     strong {
-        color: #00a0d2;
+        color: $custom-blue;
     }
 }
 
@@ -98,7 +99,7 @@ export default defineComponent({
     font-weight: 300;
 
     a {
-        color: #00a0d2;
+        color: $custom-blue;
         text-decoration: none;
     }
 
