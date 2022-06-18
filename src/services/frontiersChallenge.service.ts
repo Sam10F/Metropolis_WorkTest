@@ -1,4 +1,6 @@
+import { IAffiliation } from "@/common/interfaces/affiliation.interface";
 import { IAuthor } from "@/common/interfaces/author.interface";
+import { deleteDuplicatesFromArray } from "@/common/utils/deleteDuplicatesFromArray";
 import axios from "axios";
 
 const FrontiersChallengeService = {
@@ -60,6 +62,25 @@ const FrontiersChallengeService = {
         return axios
             .get("/data/frontiers-metropolis-challenge-L1.json")
             .then((data) => data.data.authors)
+            .catch((error) => {
+                throw error.response.data;
+            });
+    },
+
+    getAffiliations(): Promise<IAffiliation[]> {
+        return axios
+            .get("/data/frontiers-metropolis-challenge-L1.json")
+            .then((data) => {
+                const affiliations: IAffiliation[] = [];
+
+                affiliations.push(...data.data.editor.affiliations);
+                affiliations.push(...data.data.yourself.affiliations);
+                data.data.authors.map(
+                    (author: IAuthor) => author.affiliations && affiliations.push(...author.affiliations),
+                );
+
+                return deleteDuplicatesFromArray(affiliations);
+            })
             .catch((error) => {
                 throw error.response.data;
             });
