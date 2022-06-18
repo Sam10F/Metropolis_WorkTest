@@ -4,7 +4,7 @@
         <ul class="personList">
             <li v-for="author in authorList" :key="author.id">
                 <u @click="(e) => changeDisplayedAuthor(e, { title: title, id: author.id })">{{ author.fullName }}</u
-                ><sup>{{ author.publications }}</sup>
+                ><sup>{{ affiliationsToSuperindex(author.affiliations) }}</sup>
                 <AuthorCard
                     class="authorCard"
                     v-if="displayedAuthor && displayedAuthor.title === title && author.id === displayedAuthor.id"
@@ -22,6 +22,7 @@ import { defineComponent } from "vue";
 import AuthorCard from "./AuthorCard.vue";
 import { IDisplayedAuthor } from "../common/interfaces/displayedAuthor.interface";
 import { IAuthor } from "../common/interfaces/author.interface";
+import { IAffiliation } from "@/common/interfaces/affiliation.interface";
 
 export default defineComponent({
     name: "AuthorList",
@@ -36,6 +37,10 @@ export default defineComponent({
         changeDisplayedAuthor(event: Event, displayedAuthor: IDisplayedAuthor) {
             event.stopPropagation();
             this.setDisplayedAuthor(displayedAuthor);
+        },
+
+        affiliationsToSuperindex(affiliations?: IAffiliation[]): string {
+            return (affiliations || []).map((affiliation) => affiliation.id).join(",");
         },
     },
 });
@@ -62,12 +67,12 @@ export default defineComponent({
         display: inline-block;
     }
 
-    li::after {
+    li:not(:last-child)::after {
         content: ",\00a0 ";
     }
 }
 
-.personList > .personList > li:last-child::before {
+.personList > li:not(:first-child):last-child::before {
     content: "and ";
 }
 

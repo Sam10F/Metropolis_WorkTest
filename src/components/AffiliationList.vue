@@ -1,7 +1,7 @@
 <template>
     <ul class="affiliationList">
-        <li v-for="(affiliation, index) in affiliationList" :key="affiliation.id">
-            <sup>{{ index + 1 }}</sup
+        <li v-for="affiliation in affiliationList" :key="affiliation.id">
+            <sup>{{ affiliation.id }}</sup
             >{{ affiliation.name }}, {{ affiliation.city }}, {{ affiliation.country }}
         </li>
     </ul>
