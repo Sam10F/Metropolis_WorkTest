@@ -5,9 +5,7 @@
                 <h4 class="authorName">{{ author.fullName }}</h4>
                 <p>{{ author.role }}</p>
             </div>
-            <div class="authorImageWrapper">
-                <img :src="author.pictureUrl" alt="Author profile image" />
-            </div>
+            <AuthorProfilePicture :authorName="author.fullName" :pictureUrl="author.pictureUrl" />
         </section>
         <section class="authorBody">
             <ul class="authorAchievementsList">
@@ -31,10 +29,12 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
+import AuthorProfilePicture from "@/components/AuthorProfilePicture.vue";
 import { IAuthor } from "../common/interfaces/author.interface";
 
 export default defineComponent({
     name: "AuthorCard",
+    components: { AuthorProfilePicture },
     props: {
         author: { type: Object as () => IAuthor, required: true },
         setDisplayedAuthor: { type: Function, required: true },
@@ -74,18 +74,6 @@ export default defineComponent({
         font-size: 20px;
         line-height: 25px;
         margin: 0;
-    }
-}
-
-.authorImageWrapper {
-    max-height: 70px;
-    max-width: 70px;
-    border-radius: 42px;
-    border: 1px solid #e0e0e0;
-    overflow: hidden;
-
-    img {
-        width: 100%;
     }
 }
 
