@@ -1,7 +1,7 @@
 <template>
-    <div class="authorImageWrapper">
+    <div class="author-image-wrapper">
         <img v-show="imgLoaded" :src="pictureUrl" alt="Author profile image" @load="onImgLoad" />
-        <div v-show="!imgLoaded" class="initialsWrapper">
+        <div v-show="!imgLoaded" class="initials-wrapper">
             <span>{{ getInitialsFromString(authorName) }}</span>
         </div>
     </div>
@@ -40,7 +40,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.authorImageWrapper {
+.author-image-wrapper {
     height: 70px;
     width: 70px;
     border-radius: 42px;
@@ -53,7 +53,7 @@ export default defineComponent({
     }
 }
 
-.initialsWrapper {
+.initials-wrapper {
     height: 100%;
     display: flex;
     align-items: center;

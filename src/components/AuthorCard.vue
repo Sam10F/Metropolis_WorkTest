@@ -1,14 +1,14 @@
 <template>
-    <article class="authorArticle">
-        <section class="authorHeader">
-            <div class="authorInfoWrapper">
-                <h4 class="authorName">{{ author.fullName }}</h4>
+    <article class="author-article">
+        <section class="author-header">
+            <div class="author-info-wrapper">
+                <h4 class="author-name">{{ author.fullName }}</h4>
                 <p>{{ author.role }}</p>
             </div>
-            <AuthorProfilePicture :authorName="author.fullName" :pictureUrl="author.pictureUrl" />
+            <AuthorProfilePicture :author-name="author.fullName" :pictureUrl="author.pictureUrl" />
         </section>
-        <section class="authorBody">
-            <ul class="authorAchievementsList">
+        <section class="author-body">
+            <ul class="author-achievementsList">
                 <li>
                     <strong>{{ author.publications }}</strong> Publications
                 </li>
@@ -20,7 +20,7 @@
                 </li>
             </ul>
         </section>
-        <section class="authorFooter">
+        <section class="author-footer">
             <a :href="author.profileUrl" target="_blank" title="Link to authors page">VIEW PROFILE</a>
         </section>
     </article>
@@ -44,7 +44,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import "@/assets/styles/variables";
-.authorArticle {
+.author-article {
     background-color: white;
     padding: 20px;
     width: 440px;
@@ -56,7 +56,7 @@ export default defineComponent({
     }
 }
 
-.authorHeader {
+.author-header {
     display: flex;
     justify-content: space-between;
 
@@ -68,9 +68,9 @@ export default defineComponent({
     }
 }
 
-.authorInfoWrapper {
+.author-info-wrapper {
     padding-right: 20px;
-    .authorName {
+    .author-name {
         font-weight: 700;
         font-size: 20px;
         line-height: 25px;
@@ -78,7 +78,7 @@ export default defineComponent({
     }
 }
 
-.authorAchievementsList {
+.author-achievementsList {
     display: flex;
     justify-content: flex-start;
     margin: 0;
@@ -94,7 +94,7 @@ export default defineComponent({
     }
 }
 
-.authorFooter {
+.author-footer {
     text-align: right;
     font-weight: 300;
 

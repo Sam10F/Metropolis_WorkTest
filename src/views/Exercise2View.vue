@@ -1,5 +1,5 @@
 <template>
-    <section id="Exercise2" class="mainSection">
+    <section id="Exercise2" class="main-section">
         <h4>
             Multi-level menu component<br /><small
                 >To test it, go to the file 'Exercise2View.vue' and edit the object defaultTree</small

@@ -1,12 +1,12 @@
 <template>
     <div class="card" ref="form">
-        <b class="listTitle">{{ title }}</b>
-        <ul class="personList">
+        <b class="list-title">{{ title }}</b>
+        <ul class="person-list">
             <li v-for="author in authorList" :key="author.id">
                 <u @click="(e) => changeDisplayedAuthor(e, { title: title, id: author.id })">{{ author.fullName }}</u
                 ><sup>{{ affiliationsToSuperindex(author.affiliations) }}</sup>
                 <AuthorCard
-                    class="authorCard"
+                    class="author-card"
                     v-if="displayedAuthor && displayedAuthor.title === title && author.id === displayedAuthor.id"
                     :author="author"
                     :setDisplayedAuthor="setDisplayedAuthor"
@@ -46,15 +46,15 @@ export default defineComponent({
 });
 </script>
 <style scoped lang="scss">
-.listTitle {
+.list-title {
     float: left;
 }
 
-.listTitle::after {
+.list-title::after {
     content: "\00a0 ";
 }
 
-.personList {
+.person-list {
     display: block;
     position: relative;
     padding: 0;
@@ -62,6 +62,10 @@ export default defineComponent({
     line-height: 22px;
     font-weight: 300;
     top: -5px;
+
+    u {
+        cursor: pointer;
+    }
 
     li {
         display: inline-block;
@@ -72,11 +76,11 @@ export default defineComponent({
     }
 }
 
-.personList > li:not(:first-child):last-child::before {
+.person-list > li:not(:first-child):last-child::before {
     content: "and ";
 }
 
-.authorCard {
+.author-card {
     position: absolute;
     z-index: 1;
 }

@@ -1,6 +1,6 @@
 @import "@/assets/styles/variables";
 
-.dropdownIconLabel::after {
+.dropdownIcon-label::after {
     content: "";
     border: solid $custom-blue;
     border-width: 0 2px 2px 0;
@@ -13,8 +13,8 @@
     transform: translateY(-48%) rotate(45deg);
 }
 
-.dropdownIconOpen.dropdownIconOpen {
-    .dropdownIconLabel::after {
+.dropdown-icon-open.dropdown-icon-open {
+    .dropdownIcon-label::after {
         transform: translateY(0%) rotate(-135deg);
     }
 }

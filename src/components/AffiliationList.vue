@@ -1,5 +1,5 @@
 <template>
-    <ul class="affiliationList">
+    <ul class="affiliation-list">
         <li v-for="affiliation in affiliationList" :key="affiliation.id">
             <sup>{{ affiliation.id }}</sup
             >{{ affiliation.name }}, {{ affiliation.city }}, {{ affiliation.country }}
@@ -20,7 +20,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.affiliationList {
+.affiliation-list {
     padding: 0;
     margin: 0;
     list-style: none;

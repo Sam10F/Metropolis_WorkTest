@@ -33,7 +33,7 @@ nav {
     padding: 0;
 }
 
-.mainSection {
+.main-section {
     min-height: calc(100vh - 160px);
     padding: 40px;
 }

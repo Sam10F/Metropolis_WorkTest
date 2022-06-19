@@ -2,7 +2,7 @@
     <div class="multi-level-menu">
         <div class="label-wrapper" @click="toggleChildren">
             <div :style="indent" :class="labelClasses">
-                <span class="label" :class="{ dropdownIconLabel: nodes && nodes.length }">{{ label }}</span>
+                <span class="label" :class="{ 'dropdownIcon-label': nodes && nodes.length }">{{ label }}</span>
             </div>
         </div>
         <div v-if="showChildren">
@@ -39,7 +39,7 @@ export default defineComponent({
     },
     computed: {
         labelClasses() {
-            return { "has-children": this.nodes, dropdownIconOpen: this.showChildren };
+            return { "has-children": this.nodes, "dropdown-icon-open": this.showChildren };
         },
         indent() {
             return { transform: `translate(${(this.depth || 0) * 50}px)` };

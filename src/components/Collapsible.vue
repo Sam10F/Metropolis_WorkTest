@@ -1,7 +1,7 @@
 <template>
-    <article class="collapsible" :class="{ dropdownIconOpen: open }" :style="cssProps">
-        <span class="collapsibleTitle dropdownIconLabel" @click="toggleCollapsible">{{ title }}</span>
-        <div class="collapsibleContainer">
+    <article class="collapsible" :class="{ 'dropdown-icon-open': open }" :style="cssProps">
+        <span class="collapsible-title dropdownIcon-label" @click="toggleCollapsible">{{ title }}</span>
+        <div class="collapsible-container">
             <slot></slot>
         </div>
     </article>
@@ -39,20 +39,21 @@ export default defineComponent({
 <style scoped lang="scss">
 @import "@/assets/styles/variables";
 @import "@/assets/styles/dropdownIcon";
-.collapsibleTitle {
+.collapsible-title {
     position: relative;
     padding-right: 30px;
+    cursor: pointer;
     color: $custom-blue;
 }
 
-.collapsibleContainer {
+.collapsible-container {
     transition: 0.5s ease-in-out;
     overflow: hidden;
     height: 0;
 }
 
-.collapsible.dropdownIconOpen {
-    .collapsibleContainer {
+.collapsible.dropdown-icon-open {
+    .collapsible-container {
         height: var(--collapsible-height);
     }
 }

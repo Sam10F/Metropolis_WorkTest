@@ -1,11 +1,11 @@
 <template>
-    <section id="Exercise1" class="mainSection" @click="setDisplayedAuthor({})">
+    <section id="Exercise1" class="main-section" @click="setDisplayedAuthor({})">
         <MainLogo />
-        <h1 class="mainTitle">Thank you for considering participating to this paper</h1>
-        <article class="mainArticle">
+        <h1 class="main-title">Thank you for considering participating to this paper</h1>
+        <article class="main-article">
             <section>
-                <small class="articleNote">{{ type }}</small>
-                <h2 class="articleIntro">
+                <small class="article-note">{{ type }}</small>
+                <h2 class="article-intro">
                     {{ title }}
                 </h2>
             </section>
@@ -17,7 +17,7 @@
                     :displayedAuthor="displayedAuthor"
                 />
             </section>
-            <section class="editorSection">
+            <section class="editor-section">
                 <AuthorList
                     v-if="editor"
                     :title="'Editor'"
@@ -39,7 +39,7 @@
                 </Collapsible>
             </section>
             <footer>
-                <h3 class="footerText">{{ journal }} | {{ section }}</h3>
+                <h3 class="footer-text">{{ journal }} | {{ section }}</h3>
             </footer>
         </article>
     </section>
@@ -105,16 +105,15 @@ export default defineComponent({
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.mainTitle {
+.main-title {
     font-size: 24px;
     font-weight: 700;
     line-height: 22px;
     margin-bottom: 25px;
 }
 
-.mainArticle {
+.main-article {
     background-color: white;
     text-align: left;
     padding: 30px;
@@ -123,25 +122,25 @@ export default defineComponent({
     word-break: break-word;
 }
 
-.mainArticle section {
+.main-article section {
     margin-bottom: 15px;
 }
 
-.articleNote {
+.article-note {
     color: #555555;
     font-size: 17px;
     font-weight: 100;
     line-height: 21px;
 }
 
-.articleIntro {
+.article-intro {
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
     margin: 0px;
 }
 
-.footerText {
+.footer-text {
     font-size: 15px;
     margin: 0;
 }

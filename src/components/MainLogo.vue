@@ -1,6 +1,6 @@
 <template>
-    <div class="mainLogoContainer">
-        <div class="documentsContainer">
+    <div class="main-logo-container">
+        <div class="documents-container">
             <img alt="Main logo document 1" class="document1" src="@/assets/images/document.svg" />
             <img alt="Main logo document 2" class="document2" src="@/assets/images/document.svg" />
             <img alt="Main logo document 3" class="document3" src="@/assets/images/document.svg" />
@@ -18,7 +18,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.mainLogoContainer {
+.main-logo-container {
     position: relative;
     width: 120px;
     height: 90px;
@@ -28,7 +28,7 @@ export default defineComponent({
     overflow: hidden;
 }
 
-.documentsContainer {
+.documents-container {
     position: absolute;
     display: flex;
     width: 74px;
