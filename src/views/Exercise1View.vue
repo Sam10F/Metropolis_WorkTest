@@ -1,5 +1,5 @@
 <template>
-    <section class="mainSection" @click="setDisplayedAuthor({})">
+    <section id="Exercise1" class="mainSection" @click="setDisplayedAuthor({})">
         <MainLogo />
         <h1 class="mainTitle">Thank you for considering participating to this paper</h1>
         <article class="mainArticle">
@@ -107,10 +107,6 @@ export default defineComponent({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.mainSection {
-    min-height: calc(100vh - 160px);
-    padding: 40px;
-}
 .mainTitle {
     font-size: 24px;
     font-weight: 700;

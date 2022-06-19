@@ -1,5 +1,5 @@
 <template>
-    <nav><router-link to="/">Exercise 1</router-link></nav>
+    <nav><router-link to="/">Exercise 1</router-link> | <router-link to="/exercise2">Exercise 2</router-link></nav>
     <router-view />
 </template>
 
@@ -8,16 +8,6 @@
 
 body {
     margin: 0;
-}
-
-#app {
-    font-family: "MuseoSans";
-    text-align: center;
-    color: #2c3e50;
-    background-color: #e5e5e5;
-    height: min-content;
-    margin: 0;
-    padding: 0;
 }
 
 nav {
@@ -31,5 +21,20 @@ nav {
             color: #42b983;
         }
     }
+}
+
+#app {
+    font-family: "MuseoSans";
+    text-align: center;
+    color: #2c3e50;
+    background-color: #e5e5e5;
+    height: min-content;
+    margin: 0;
+    padding: 0;
+}
+
+.mainSection {
+    min-height: calc(100vh - 160px);
+    padding: 40px;
 }
 </style>
